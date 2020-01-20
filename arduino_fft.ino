@@ -28,10 +28,10 @@ void loop() {
     fft_run(); // process the data in the fft
     fft_mag_lin8(); // take the output of the fft
     sei();
-    Serial.print("b,");
-    for(int i = 0; i < FFT_N / 2; i++) {
-        Serial.print(fft_lin_out8[i]);
-        Serial.print(",");
-    }
-    Serial.println();
+    Serial.print("xz");
+    Serial.write(fft_lin_out8, 40);
+//    for(int i = 0; i < 40; i++) {
+//        Serial.print(fft_lin_out8[i]);
+//        Serial.print(",");
+//    }
 }
